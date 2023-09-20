@@ -1,0 +1,53 @@
+.container.header {
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.section {
+  background: lightblue;
+  border: solid black 1px;
+  margin: 4px;
+  padding: 6px;
+}
+
+.section-header {
+  padding: 4px;
+  border: solid black 1px;
+}
+
+h3 {
+  margin: 0;
+}
+
+.section-one > .section-header {
+  background-color: coral;
+}
+
+.section-two > .section-header {
+  background-color: hotpink;
+}
+
+.section-three > .section-header {
+  background-color: springgreen;
+}
+
+#nav-list {
+  border: solid 1px grey;
+  background-color: lightblue;
+}
+
+.menu-list {
+  padding: 8px;
+  border-bottom: solid 1px grey;
+}
+
+article {
+  margin-bottom: 8px;
+}
