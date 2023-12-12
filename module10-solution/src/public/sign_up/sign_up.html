@@ -1,0 +1,53 @@
+<fieldset>
+    <legend>Sign Up</legend>
+    <form name='signUpForm' novalidate>
+        <input type="text" name="firstName" placeholder="First Name"
+            ng-model="sign_up.firstName"
+            required>
+        <span
+          ng-if="(signUpForm.firstName.$error.required) && signUpForm.firstName.$touched">
+          First name is required 
+        </span>
+        <br>
+
+        <input type="text" name="lastName" placeholder="Last Name"
+            ng-model="sign_up.lastName"
+            required>
+        <span
+          ng-if="(signUpForm.lastName.$error.required) && signUpForm.lastName.$touched">
+          Last name is required 
+        </span>
+        <br>
+
+        <input type="email" name="email" placeholder="Email"
+            ng-model="sign_up.email"
+            required>
+        <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
+        <br>
+
+        <input type="text" name="phone" placeholder="Phone ###-###-####"
+            ng-model="sign_up.phone"
+            required
+            pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+          Phone must be in the format ###-###-####.
+        </span>
+        <br>
+
+        <input type="text" name="menuItem" ng-change="sign_up.validateMenuItem()"placeholder="Favorite Menu Item"
+            ng-model="sign_up.menuItem"
+            required>
+        <span ng-if="signUpForm.menuItem.$invalid && signUpForm.menuItem.$touched">
+          Number of favorite menu item is required
+        </span>
+        <span>  {{sign_up.error}}</span>
+        <br>
+   
+        <button
+        ng-disabled="signUpForm.$invalid"
+        ng-click="sign_up.submit()">Submit </button>
+        <div style="margin-top: 10px;">{{sign_up.completed}}</div>
+    </form>
+  </fieldset>
